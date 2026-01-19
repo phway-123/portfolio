@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+import {
+  SiPhp,
+  SiReact,
+  SiTypescript,
+  SiNodedotjs,
+  SiMysql,
+  SiSap,
+} from "react-icons/si";
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -54,6 +63,15 @@ function App() {
       desc: "Modern portfolio website built with React & TypeScript.",
       link: "https://github.com/yourusername/portfolio",
     },
+  ];
+
+  const skills = [
+    { name: "PHP", icon: <SiPhp />, level: "Advanced" },
+    { name: "React", icon: <SiReact />, level: "Advanced" },
+    { name: "TypeScript", icon: <SiTypescript />, level: "Intermediate" },
+    { name: "Node.js", icon: <SiNodedotjs />, level: "Intermediate" },
+    { name: "MySQL", icon: <SiMysql />, level: "Intermediate" },
+    { name: "SAP", icon: <SiSap />, level: "Beginner" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -122,9 +140,11 @@ function App() {
         <section id="skills" className="section skills">
           <h2>Skills</h2>
           <div className="skills-grid">
-            {["PHP", "React", "TypeScript", "Node.js", "MySQL", "SAP"].map((s) => (
-              <div key={s} className="skill">
-                {s}
+            {skills.map((s) => (
+              <div className="skill" key={s.name}>
+                <div className="skill-icon">{s.icon}</div>
+                <div className="skill-name">{s.name}</div>
+                <div className="skill-level">{s.level}</div>
               </div>
             ))}
           </div>
