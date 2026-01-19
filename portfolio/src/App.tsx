@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { FiSun, FiMoon } from "react-icons/fi";
+import { FaDownload } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { SiLinkedin, SiGithub, SiWhatsapp } from "react-icons/si";
 import "./App.css";
 
 import {
@@ -83,7 +87,10 @@ function App() {
   return (
     <div className="App">
       <header className="navbar">
-        <div className="logo">MyPortfolio</div>
+<div className="logo">
+  <div className="logo-circle">P</div>
+  <div className="logo-text">Phway Phway</div>
+</div>
 
         <div className={`nav-links ${navOpen ? "open" : ""}`}>
           {sections.map((sec) => (
@@ -96,12 +103,17 @@ function App() {
             </a>
           ))}
 
-          <button
-            className="dark-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? "Light" : "Dark"}
-          </button>
+<button
+  className={`dark-toggle ${darkMode ? "dark" : "light"}`}
+  onClick={() => setDarkMode(!darkMode)}
+>
+  <span className="toggle-icon">
+    {darkMode ? <FiMoon /> : <FiSun />}
+  </span>
+  <span className="toggle-text">
+    {darkMode ? "Dark Mode" : "Light Mode"}
+  </span>
+</button>
         </div>
 
         <div className="burger" onClick={() => setNavOpen(!navOpen)}>
@@ -116,14 +128,15 @@ function App() {
           <div className="hero">
             <div className="hero-text">
               <h1>Hello, I’m [Your Name]</h1>
-              <p>Web Developer | PHP | React | Node.js | SAP Integration</p>
-              <button className="cta" onClick={() => scrollToSection("projects")}>
-                View Projects
-              </button>
+              <p>Web Developer | PHP | React | Node.js | SAP Integrationgggggggggggggggggggggggggggggggggggggggggggggg</p>
+           <a className="cta" href="/PhwayPhway_CV.pdf" download>
+  <FaDownload className="cta-icon" />
+  Download CV
+</a>
             </div>
 
             <div className="hero-img">
-              <img src="/your-photo.jpg" alt="Your Name" />
+              <img src="../images/portfolio_tester.png" alt="Your Name" />
             </div>
           </div>
         </section>
@@ -182,12 +195,53 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="section contact">
-          <h2>Contact</h2>
-          <p>Email: yourname@example.com</p>
-          <p>Phone: +65 1234 5678</p>
-          <p>LinkedIn: linkedin.com/in/yourname</p>
-        </section>
+<section id="contact" className="section contact">
+  <h2>Contact</h2>
+
+  <div className="contact-icons">
+<a
+  className="contact-icon"
+  href="mailto:yourname@example.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Email"
+>
+  <MdEmail />
+</a>
+
+
+    <a
+      className="contact-icon"
+      href="https://www.linkedin.com/in/yourname"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <SiLinkedin />
+    </a>
+
+    <a
+      className="contact-icon"
+      href="https://github.com/phway-123"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+    >
+      <SiGithub />
+    </a>
+
+    <a
+      className="contact-icon"
+      href="https://wa.me/6512345678"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+      <SiWhatsapp />
+    </a>
+  </div>
+</section>
+
       </main>
 
       <footer className="footer">

@@ -77,14 +77,44 @@ body {
 }
 
 .dark-toggle {
-  border: none;
+  border: 1px solid rgba(109, 168, 255, 0.5);
   padding: 8px 12px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.dark-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.dark-toggle .toggle-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(109, 168, 255, 0.2);
+}
+
+.dark-toggle.dark {
   background: var(--accent);
   color: white;
-  font-weight: 700;
+  border: none;
 }
+
+.dark-toggle.dark .toggle-icon {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 
 /* Burger menu */
 .burger {
@@ -108,28 +138,17 @@ body {
 
 /* Home */
 .home {
-  background: linear-gradient(135deg, #ffffff, #f2f8ff);
+  background: linear-gradient(135deg, var(--bg), rgba(109, 168, 255, 0.12));
   color: var(--text);
   padding-top: 90px;
   padding-bottom: 90px;
 }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
-
-.hero-text h1 {
-  font-size: 46px;
-  margin: 0;
-}
-
+.hero-text h1,
 .hero-text p {
-  font-size: 18px;
-  margin: 16px 0;
+  color: var(--text);
 }
+
 
 .cta {
   padding: 12px 22px;
@@ -142,8 +161,29 @@ body {
   transition: transform 0.3s ease;
 }
 
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.cta-icon {
+  font-size: 16px;
+}
+
+
 .cta:hover {
   transform: translateY(-3px);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .hero-img img {
@@ -154,6 +194,7 @@ body {
   border: 5px solid rgba(109, 168, 255, 0.4);
   box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
+
 
 /* Cards */
 .skills-grid,
@@ -281,6 +322,65 @@ body {
   transform: translateY(40px);
   animation: sectionReveal 0.8s forwards;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 12px 25px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+.contact-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+
 
 @keyframes sectionReveal {
   to {
