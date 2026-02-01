@@ -1,0 +1,10 @@
+title: My Site
+description: "My awesome GitHub Pages site"
+baseurl: "" # leave empty if publishing at root
+url: "https://phway-123.github.io" # replace with your GitHub Pages URL
+
+theme: jekyll-theme-primer
+
+# Optional: SCSS settings
+sass:
+  style: compressed
